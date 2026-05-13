@@ -1,0 +1,50 @@
+CREATE TABLE Vehicle (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    brand TEXT NOT NULL,
+    model TEXT NOT NULL,
+    year INTEGER,
+    vin TEXT,
+    currentMileage INTEGER NOT NULL DEFAULT 0,
+    createdAt TEXT NOT NULL
+);
+
+CREATE TABLE Maintenance (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    vehicleId INTEGER NOT NULL,
+    date TEXT NOT NULL,
+    mileage INTEGER NOT NULL,
+    type TEXT NOT NULL,
+    description TEXT,
+    totalCost REAL NOT NULL DEFAULT 0,
+    createdAt TEXT NOT NULL,
+    FOREIGN KEY (vehicleId) REFERENCES Vehicle(id) ON DELETE CASCADE
+);
+
+CREATE TABLE Part (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    maintenanceId INTEGER NOT NULL,
+    name TEXT NOT NULL,
+    partNumber TEXT,
+    price REAL NOT NULL DEFAULT 0,
+    quantity INTEGER NOT NULL DEFAULT 1,
+    FOREIGN KEY (maintenanceId) REFERENCES Maintenance(id) ON DELETE CASCADE
+);
+
+-- Запросы
+selectAllVehicles:
+SELECT * FROM Vehicle ORDER BY createdAt DESC;
+
+selectVehicleById:
+SELECT * FROM Vehicle WHERE id = ?;
+
+insertVehicle:
+INSERT INTO Vehicle (name, brand, model, year, vin, currentMileage, createdAt)
+VALUES (?, ?, ?, ?, ?, ?, ?);
+
+selectMaintenanceByVehicle:
+SELECT * FROM Maintenance WHERE vehicleId = ? ORDER BY date DESC;
+
+insertMaintenance:
+INSERT INTO Maintenance (vehicleId, date, mileage, type, description, totalCost, createdAt)
+VALUES (?, ?, ?, ?, ?, ?, ?);
