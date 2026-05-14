@@ -1,4 +1,4 @@
-package ru.vlyashuk.drivekepp.cache
+package ru.vlyashuk.drivekeep.cache
 
 import app.cash.sqldelight.db.SqlDriver
 

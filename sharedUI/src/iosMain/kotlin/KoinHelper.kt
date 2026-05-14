@@ -2,7 +2,7 @@ import org.koin.core.Koin
 import org.koin.core.context.startKoin
 import org.koin.dsl.module
 import ru.vlyashuk.drivekeep.cache.IOSDatabaseDriverFactory
-import ru.vlyashuk.drivekepp.cache.DatabaseDriverFactory
+import ru.vlyashuk.drivekeep.cache.DatabaseDriverFactory
 import kotlin.experimental.ExperimentalObjCName
 
 @OptIn(ExperimentalObjCName::class)

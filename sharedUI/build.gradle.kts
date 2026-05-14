@@ -84,7 +84,7 @@ dependencies {
     debugImplementation(libs.compose.ui.tooling)
 }
 android {
-    namespace = "ru.vlyashuk.drivekepp"
+    namespace = "ru.vlyashuk.drivekeep"
     compileSdk = 36
     defaultConfig {
         minSdk = 23
@@ -105,7 +105,7 @@ sqldelight {
         create("MyDatabase") {
             // Database configuration here.
             // https://cashapp.github.io/sqldelight
-            packageName.set("ru.vlyashuk.drivekepp.db")
+            packageName.set("ru.vlyashuk.drivekeep.db")
         }
     }
 }

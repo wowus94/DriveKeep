@@ -1,4 +1,4 @@
-package ru.vlyashuk.drivekepp
+package ru.vlyashuk.drivekeep
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Icon
@@ -17,8 +17,9 @@ import drivekeep.sharedui.generated.resources.ic_book
 import drivekeep.sharedui.generated.resources.ic_home
 import drivekeep.sharedui.generated.resources.ic_settings
 import org.jetbrains.compose.resources.vectorResource
-import ru.vlyashuk.drivekepp.Screen.Home
-import ru.vlyashuk.drivekepp.theme.AppTheme
+import ru.vlyashuk.drivekeep.Screen.Home
+import ru.vlyashuk.drivekeep.theme.AppTheme
+import ru.vlyashuk.drivekeep.ui.HomeScreen
 
 @Composable
 fun App(onThemeChanged: @Composable (isDark: Boolean) -> Unit = {}) = AppTheme(onThemeChanged) {
@@ -58,8 +59,8 @@ fun App(onThemeChanged: @Composable (isDark: Boolean) -> Unit = {}) = AppTheme(o
                         SettingsScreen()
                     }
 
-                    is Screen.Favorite -> NavEntry(key) {
-                        FavoriteScreen()
+                    is Screen.Vehicle -> NavEntry(key) {
+                        VehicleScreen()
                     }
                 }
             }
@@ -86,14 +87,14 @@ fun BottomBar(
         )
 
         NavigationBarItem(
-            selected = current is Screen.Favorite,
-            onClick = { onNavigate(Screen.Favorite) },
+            selected = current is Screen.Vehicle,
+            onClick = { onNavigate(Screen.Vehicle) },
             icon = {
                 Icon(
                     vectorResource(Res.drawable.ic_book), null
                 )
             },
-            label = { Text("Favorite") }
+            label = { Text("Vehicle") }
         )
 
         NavigationBarItem(
