@@ -1,4 +1,4 @@
-package ru.vlyashuk.drivekepp.androidApp
+package ru.vlyashuk.drivekeep.androidApp
 
 import android.app.Application
 import org.koin.android.ext.koin.androidContext

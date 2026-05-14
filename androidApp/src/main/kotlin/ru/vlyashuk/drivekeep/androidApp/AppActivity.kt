@@ -1,4 +1,4 @@
-package ru.vlyashuk.drivekepp.androidApp
+package ru.vlyashuk.drivekeep.androidApp
 
 import android.app.Activity
 import android.os.Bundle
@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowInsetsControllerCompat
-import ru.vlyashuk.drivekepp.App
+import ru.vlyashuk.drivekeep.App
 
 class AppActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

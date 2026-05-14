@@ -7,16 +7,16 @@ plugins {
 }
 
 android {
-    namespace = "ru.vlyashuk.drivekepp.androidApp"
+    namespace = "ru.vlyashuk.drivekeep.androidApp"
     compileSdk = 36
 
     defaultConfig {
         minSdk = 23
         targetSdk = 36
 
-        applicationId = "ru.vlyashuk.drivekepp.androidApp"
+        applicationId = "ru.vlyashuk.drivekeep.androidApp"
         versionCode = 1
-        versionName = "1.0.0"
+        versionName = "1.0.1"
     }
 
     compileOptions {

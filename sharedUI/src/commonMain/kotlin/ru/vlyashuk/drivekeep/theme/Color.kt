@@ -1,4 +1,4 @@
-package ru.vlyashuk.drivekepp.theme
+package ru.vlyashuk.drivekeep.theme
 
 import androidx.compose.ui.graphics.Color
 
